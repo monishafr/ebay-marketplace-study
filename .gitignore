@@ -1,4 +1,9 @@
-cat > env/.env.example <<'EOF'
-EBAY_CLIENT_ID=
-EBAY_CLIENT_SECRET=
-EOF
+__pycache__/
+*.py[cod]
+*.log
+.env
+venv/
+.DS_Store
+data/raw/
+data/interim/
+!env/.env.example
