@@ -1,21 +1,25 @@
 # eBay Marketplace Study
 
-> Work-in-progress dataset & analysis of >10 k eBay listings and seller records.
+Collecting and analysing **>10 000** eBay sold-listing records + seller data.
 
-## Directory layout
-data/
-  raw/       # unprocessed API dumps
-  interim/   # intermediate merges (e.g., unique seller list)
-  clean/     # final, analysis-ready CSVs or Parquet
-src/         # Python collection & cleaning scripts
-notebooks/   # ad-hoc exploration & EDA
-tests/       # integrity checks
-env/         # .env.example lives here
+## Platform & Key Fields
 
+| Field | Example | Reason we keep it |
+|-------|---------|-------------------|
+| `item_id` | `v1|254123456789` | unique key for joins |
+| `title` | `"Apple iPhone 15 Pro Max 256GB"` | used for title-length vs price |
+| `soldPrice.value` | `1099.00` | dependent variable in Q1, Q2, Q5 |
+| `soldDate` | `2025-05-26T14:11:33Z` | temporal trends, conversion speed |
+| `shippingOptions.cost` | `0.0` | free vs paid shipping (Q3) |
+| `listingFormat` | `"FIXED_PRICE"` / `"AUCTION"` | Q4 |
+| `quantity`, `quantitySold` | `1`, `1` | sell-through calculation |
+| `condition` | `"MANUFACTURER_REFURBISHED"` | refurbished price trend (Q5) |
+| `seller.username` | `"top-seller123"` | join to TRS flag |
+| `sellerInfo.topRatedSeller` | `true` | Q2 |
 
-## TODO (high-level)
+*(Full field list will be finalised after the first bulk pull.)*
 
-- [ ] Register eBay developer keys (Phase 1)
-- [ ] Build `src/collect.py` to hit Browse API
-- [ ] Clean & merge data (Phase 3)
-- [ ] Draft README sections on data fields & challenges (Phase 6)
+## Folder Layout
+data/ raw/ interim/ clean/
+src/ notebooks/
+tests/
