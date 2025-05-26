@@ -1,10 +1,20 @@
+# Python bytecode/cache
 __pycache__/
 *.py[cod]
-*.log
-.env
-venv/
-.DS_Store
-data/raw/
-data/interim/
-!env/.env.example
+
+# Jupyter notebooks cache
 .ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Data files
+data/raw/
+*.ndjson
+*.gz
+
+# System files
+.DS_Store
