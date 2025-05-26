@@ -7,3 +7,4 @@ venv/
 data/raw/
 data/interim/
 !env/.env.example
+.ipynb_checkpoints/
