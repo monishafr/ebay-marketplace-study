@@ -5,7 +5,7 @@ Usage:
 """
 import argparse, json, logging, time, pathlib, sys, requests
 from datetime import datetime
-from utils import get_app_token
+from src.utils import get_app_token
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
